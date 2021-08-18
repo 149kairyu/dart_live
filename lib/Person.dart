@@ -1,8 +1,8 @@
 import 'HairColor.dart';
 
 class Person {
-  //Unterstrich für protected Sichtbarkeit
-  //final sodass der Name nicht geändert werden kann
+  //Unterstrich für private Sichtbarkeit
+  //final keyword, sodass der Name nicht geändert werden kann
   final String _name;
   String _location;
   int _age;
@@ -16,6 +16,9 @@ class Person {
   Person.onlyName(this._name);
   Person.withHair(this._name, this._location, this._hair, [this._age = 18]);
   //inputAge und inputLocation als named argument
+  //stattdessen auch this.location = 'Berlin und this.age = '0' möglich,
+  //ABER nur wenn die Sichtbarkeit public (d. h. age statt _age)
+  //named Argumente sind optional, in Flutter (nicht aber in Dart) gibt es die Annotation @required
   Person.namedArg(this._name, {String inputLoc = 'Berlin', int inputAge = 0}) {
     _location = inputLoc;
     _age = inputAge;
